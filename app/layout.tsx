@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css"
 
@@ -30,7 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${onest.variable} font-sans antialiased overflow-x-hidden`}>{children}</body>
+      <body className={`${onest.variable} font-sans antialiased overflow-x-hidden`}>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
